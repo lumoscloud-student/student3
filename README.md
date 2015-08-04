@@ -1,4 +1,10 @@
 # student3
 
 I am modifying to show changes
-bububu
+
+ciakaka
+satu
+dua
+
+
+tiga
