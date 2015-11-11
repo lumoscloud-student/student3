@@ -2,5 +2,6 @@
 
 I am using GitHub by modifying local text
 
-Adding line number 5
+#Delete line 5
 Save and Close the file
+A few more...
