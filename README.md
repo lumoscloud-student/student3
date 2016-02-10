@@ -1,6 +1,6 @@
 # student3
 
-I am using GitHub by modifying local text
+Test gitbhub
 
 
 Save and Close the file
