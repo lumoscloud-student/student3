@@ -1,0 +1,37 @@
+#Create Tenant
+method: POST
+url: https://10.101.2.123/api/node/mo/uni/tn-Tenant3.json
+payload{"fvTenant":{"attributes":{"dn":"uni/tn-Tenant3","name":"Tenant3","rn":"tn-Tenant3","status":"created"},"children":[]}}
+response: {"totalCount":"0","imdata":[]}
+timestamp: 14:15:59 DEBUG 
+
+#Create MainCtx/VRF/PN
+method: POST
+url: https://10.101.2.123/api/node/mo/uni/tn-Tenant3/ctx-Main.json
+payload{"fvCtx":{"attributes":{"dn":"uni/tn-Tenant3/ctx-Main","name":"Main","rn":"ctx-Main","status":"created"},"children":[]}}
+response: {"totalCount":"0","imdata":[]}
+timestamp: 14:20:17 DEBUG 
+method: POST
+url: https://10.101.2.123/api/node/mo/uni/tn-Tenant3/BD-VLAN_101_10.3.1.1-24.json
+payload{"fvBD":{"attributes":{"dn":"uni/tn-Tenant3/BD-VLAN_101_10.3.1.1-24","mac":"00:22:BD:F8:19:FF","name":"VLAN_101_10.3.1.1-24","unkMacUcastAct":"flood","arpFlood":"true","rn":"BD-VLAN_101_10.3.1.1-24","status":"created"},"children":[{"fvSubnet":{"attributes":{"dn":"uni/tn-Tenant3/BD-VLAN_101_10.3.1.1-24/subnet-[10.3.1.1/24]","ip":"10.3.1.1/24","scope":"public","rn":"subnet-[10.3.1.1/24]","status":"created"},"children":[]}},{"fvRsCtx":{"attributes":{"tnFvCtxName":"Main","status":"created,modified"},"children":[]}}]}}
+response: {"totalCount":"0","imdata":[]}
+timestamp: 14:21:42 DEBUG 
+method: POST
+url: https://10.101.2.123/api/node/mo/uni/tn-Tenant3/ap-Legacy_VLANs_EPG.json
+payload{"fvAp":{"attributes":{"dn":"uni/tn-Tenant3/ap-Legacy_VLANs_EPG","name":"Legacy_VLANs_EPG","rn":"ap-Legacy_VLANs_EPG","status":"created"},"children":[]}}
+response: {"totalCount":"0","imdata":[]}
+timestamp: 14:24:29 DEBUG 
+method: POST
+url: https://10.101.2.123/api/node/mo/uni/tn-Tenant3/ap-Legacy_VLANs_EPG/epg-VLAN_101_10.3.1.1-24.json
+payload{"fvAEPg":{"attributes":{"dn":"uni/tn-Tenant3/ap-Legacy_VLANs_EPG/epg-VLAN_101_10.3.1.1-24","name":"VLAN_101_10.3.1.1-24","rn":"epg-VLAN_101_10.3.1.1-24","status":"created"},"children":[{"fvRsBd":{"attributes":{"tnFvBDName":"VLAN_101_10.3.1.1-24","status":"created,modified"},"children":[]}},{"fvRsDomAtt":{"attributes":{"tDn":"uni/phys-phys","status":"created"},"children":[]}},{"fvRsPathAtt":{"attributes":{"tDn":"topology/pod-1/paths-101/pathep-[eth1/1]","encap":"vlan-101","instrImedcy":"immediate","status":"created"},"children":[]}}]}}
+response: {"totalCount":"0","imdata":[]}
+timestamp: 14:25:54 DEBUG 
+method: POST
+url: https://10.101.2.123/api/node/mo/uni/tn-Tenant3/ap-Legacy_VLANs_EPG/epg-VLAN_101_10.3.1.1-24.json
+payload{"fvRsProv":{"attributes":{"tnVzBrCPName":"default","status":"created,modified"},"children":[]}}
+response: {"totalCount":"0","imdata":[]}
+timestamp: 14:26:23 DEBUG 
+method: POST
+url: https://10.101.2.123/api/node/mo/uni/tn-Tenant3/ap-Legacy_VLANs_EPG/epg-VLAN_101_10.3.1.1-24.json
+payload{"fvRsCons":{"attributes":{"tnVzBrCPName":"default","status":"created,modified"},"children":[]}}
+response: {"totalCount":"0","imdata":[]}

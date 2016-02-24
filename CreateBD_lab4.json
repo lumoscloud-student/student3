@@ -1,0 +1,38 @@
+https://{{apic}}/api/node/mo/uni/tn-{{tenant}}/BD-{{BD-name}}.json
+
+{
+  "fvBD": {
+    "attributes": {
+      "dn": "uni/tn-{{tenant}}/BD-{{BD-name}}",
+      "mac": "00:22:BD:F8:19:FF",
+      "name": "{{BD-name}}",
+      "unkMacUcastAct": "{{uu-flood-proxy}}",
+      "arpFlood": "{{arp-flood}}",
+      "rn": "BD-{{BD-name}}",
+      "status": "created"
+    },
+    "children": [
+      {
+        "fvSubnet": {
+          "attributes": {
+            "dn": "uni/tn-{{tenant}}/BD-{{BD-name}}/subnet-[{{svi-ip}}]",
+            "ip": "{{svi-ip}}",
+            "scope": "{{pub-priv}}",
+            "rn": "subnet-[{{svi-ip}}]",
+            "status": "created"
+          },
+          "children": []
+        }
+      },
+      {
+        "fvRsCtx": {
+          "attributes": {
+            "tnFvCtxName": "{{vrf-name}}",
+            "status": "created,modified"
+          },
+          "children": []
+        }
+      }
+    ]
+  }
+}response: {"totalCount":"0","imdata":[]}

@@ -1,0 +1,18 @@
+https://{{apic}}/api/aaaLogin.json
+ 
+ 
+{"aaaUser":{"attributes":{"name":"{{username}}","pwd":"{{password"}}}
+
+https://{{apic}}/api/node/mo/uni/tn-{{tenant}}/BD-{{BD-name}}.json
+
+{"fvBD":{"attributes":{"dn":"uni/tn-{{tenant}}/BD-{{BD-name}}","mac":"00:22:BD:F8:19:FF","name":"{{BD-name}}","unkMacUcastAct":"{{uu-flood-proxy}}","arpFlood":"{{arp-flood}}","rn":"BD-{{BD-name}}","status":"created"},"children":[{"fvSubnet":{"attributes":{"dn":"uni/tn-{{tenant}}/BD-{{BD-name}}/subnet-[{{svi-ip}}]","ip":"{{svi-ip}}","scope":"{{pub-priv}}","rn":"subnet-[{{svi-ip}}]","status":"created"},"children":[]}},{"fvRsCtx":{"attributes":{"tnFvCtxName":"{{vrf-name}}","status":"created,modified"},"children":[]}}]}}
+response: {"totalCount":"0","imdata":[]}
+
+https://{{apic}}/api/node/mo/uni/tn-{{tenant}}/ap-{{anp-name}}/epg-{{epg-name}}.json
+{"fvAEPg":{"attributes":{"dn":"uni/tn-{{tenant}}/ap-{{anp-name}}/epg-{{epg-name}}","name":"{{epg-name}}","rn":"epg-{{epg-name}}","status":"created"},"children":[{"fvRsBd":{"attributes":{"tnFvBDName":"{{BD-name}}","status":"created,modified"},"children":[]}},{"fvRsDomAtt":{"attributes":{"tDn":"uni/phys-{{domain-name}}","status":"created"},"children":[]}},{"fvRsPathAtt":{"attributes":{"tDn":"topology/pod-2/paths-{{sw-node-id}}/pathep-[{{port-id}}]","encap":"vlan-{{legacy-vlan-id}}","instrImedcy":"immediate","status":"created"},"children":[]}}]}}
+
+https://{{apic}}/api/node/mo/uni/tn-{{tenant}}/ap-{{anp-name}}/epg-{{epg-name}}.json
+{"fvRsProv":{"attributes":{"tnVzBrCPName":"default","status":"created,modified"},"children":[]}}
+
+https://{{apic}}/api/node/mo/uni/tn-{{tenant}}/ap-{{anp-name}}/epg-{{epg-name}}.json
+{"fvRsCons":{"attributes":{"tnVzBrCPName":"default","status":"created,modified"},"children":[]}}
